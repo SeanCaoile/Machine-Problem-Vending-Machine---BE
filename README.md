@@ -40,22 +40,13 @@
 
 ### SETUP
 
+1. git clone https://github.com/SeanCaoile/Machine-Problem-Vending-Machine---BE.git
+2. navigate to the folder: Machine Problem Vending Machine - BE
+3. pip install -r requirements.txt
 
-
-### How to run the API
-- In the console, navigate to the folder: Machine Problem Vending Machine - BE
+#### How to run the API
 - run: ```python app.py```
 - use the sample request format show in the "Sample Request" section above
 
-### How to run the test case checker
-- In the console, navigate to the folder: Machine Problem Vending Machine - BE
+#### How to run the test case checker
 - run:  ```python -m unittest test_app.py```
-
-
-
-Clone the repository.
-Navigate to the project folder.
-Install dependencies: pip install -r requirements.txt.
-Run the application: python app.py.
-Access the endpoint at http://localhost:5000/api/change.
-Run tests: python -m unittest test_app.py
