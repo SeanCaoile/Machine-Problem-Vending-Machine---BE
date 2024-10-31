@@ -14,12 +14,12 @@ class ChangeApiTestCase(unittest.TestCase):
             # success
             {"bill": 1000, "owed": 1, "expected_status": 200, "expected_change": {"500": 1, "200":2, "50":1,"20":2,"5":1,"1":4}},
             {"bill": 100, "owed": 27, "expected_status": 200, "expected_change": {"50": 1, "20":1, "1":3}},
+            
             # fails
             {"bill": 0, "owed": 0, "expected_status": 400, "expected_error": "Bills must be 20,50,100,200,500,or 1000; Owed must be from 0 to 1000."},
             {"bill": 500, "owed": 600, "expected_status": 400, "expected_error": "Bill amount must be greater than owed amount."},
             {"bill": "bill", "owed": "owed", "expected_status": 400, "expected_error": "Invalid input. Please provide numeric values for 'bill' and 'owed'."},
             {"bill": -100, "owed": -50, "expected_status": 400, "expected_error": "Bills must be 20,50,100,200,500,or 1000; Owed must be from 0 to 1000."},
-            
             
             # # other tests
             {"bill": 1001, "owed": 10, "expected_status": 400, "expected_error": "Bills must be 20,50,100,200,500,or 1000; Owed must be from 0 to 1000."},

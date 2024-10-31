@@ -21,27 +21,29 @@ def calculate_change(bill, owed):
 @app.route('/calculate-change', methods=['GET'])
 def get_change():
     try:
+        # get parameters
         bill = float(request.args.get('bill'))
         owed = float(request.args.get('owed'))
 
-        valid_bills = [20, 50, 100, 200, 500, 1000]
+        valid_bills = [20, 50, 100, 200, 500, 1000] # different bill values
         
         # Validate inputs
-        if (bill not in valid_bills) or owed < 0:
+        if (bill not in valid_bills) or owed < 0:   
             return jsonify({
                 "status": "error",
                 "status_code": 400,
                 "message": "Bills must be 20,50,100,200,500,or 1000; Owed must be from 0 to 1000."
             }), 400
             
-        if bill < owed:
+        if bill < owed:                 
             return jsonify({
                 "status": "error",
                 "status_code": 400,
                 "message": "Bill amount must be greater than owed amount."
             }), 400
 
-        change_distribution = calculate_change(bill, owed)
+        # run the function
+        change_distribution = calculate_change(bill, owed)      # denomination mapping
         
         return jsonify({
             "status": "success",
